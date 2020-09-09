@@ -2,10 +2,17 @@ from pathlib import Path
 
 from setuptools import setup
 
+version = (
+    (Path(__file__).parent / "flake8_datetime_utcnow" / "__version__.py")
+    .read_text()
+    .split("=")[1]
+    .strip()[1:-1]
+)
+
 setup(
     name="flake8_datetime_utcnow_plugin",
     license="MIT",
-    version="0.1.0",
+    version=version,
     description="Plugin to check that utcnow() is not used in favour of now(UTC)",
     author="Daniele Esposti",
     author_email="daniele.esposti@gmail.com",

@@ -1,3 +1,4 @@
+from flake8_datetime_utcnow.__version__ import __version__
 from flake8_datetime_utcnow.visitor import UtcnowVisitor
 
 
@@ -7,7 +8,7 @@ def error(lineno: int, offset: int, code: str, message: str):
 
 class DatetimeUtcnowPlugin:
     name = "flake8_datetime_utcnow_plugin"
-    version = "0.1.0"
+    version = __version__
 
     def __init__(self, tree):
         self.tree = tree
