@@ -1,7 +1,6 @@
 from pathlib import Path
-from setuptools import setup
-import setuptools
 
+from setuptools import setup
 
 setup(
     name="flake8_datetime_utcnow_plugin",

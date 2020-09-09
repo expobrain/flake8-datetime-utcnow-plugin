@@ -6,3 +6,6 @@ exclude = '''
     \.git|venv
 )/
 '''
+
+[tool.isort]
+from_first = true
