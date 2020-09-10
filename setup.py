@@ -21,7 +21,7 @@ setup(
     install_requires=["flake8>=3.0.0"],
     entry_points={
         "flake8.extension": [
-            "U1 = flake8_datetime_utcnow:DatetimeUtcnowPlugin",
+            "U1 = flake8_datetime_utcnow:DatetimeUtcnowLinter",
         ],
     },
     classifiers=[

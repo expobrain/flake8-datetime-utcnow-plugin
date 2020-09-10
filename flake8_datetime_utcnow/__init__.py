@@ -1,1 +1,1 @@
-from flake8_datetime_utcnow.linter import DatetimeUtcnowPlugin
+from flake8_datetime_utcnow.linter import DatetimeUtcnowLinter

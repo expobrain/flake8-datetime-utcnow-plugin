@@ -3,10 +3,10 @@ from flake8_datetime_utcnow.visitor import UtcnowVisitor
 
 
 def error(lineno: int, offset: int, code: str, message: str):
-    return (1, 10, f"{code} {message}", DatetimeUtcnowPlugin)
+    return (1, 10, f"{code} {message}", DatetimeUtcnowLinter)
 
 
-class DatetimeUtcnowPlugin:
+class DatetimeUtcnowLinter:
     name = "flake8_datetime_utcnow_plugin"
     version = __version__
 
