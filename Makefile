@@ -6,7 +6,7 @@ fmt:
 		--remove-all-unused-imports \
 		--ignore-init-module-imports \
 		-r \
-		setup.py tests flake8_datetime_utcnow
+		setup.py tests src
 	isort --profile black .
 	black .
 
@@ -17,6 +17,6 @@ check:
 		--ignore-init-module-imports \
 		-r \
 		-c \
-		setup.py tests flake8_datetime_utcnow
+		setup.py tests src
 	isort --profile black -c .
 	black --check .

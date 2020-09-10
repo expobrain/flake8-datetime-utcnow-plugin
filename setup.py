@@ -1,9 +1,9 @@
 from pathlib import Path
 
-from setuptools import setup
+from setuptools import find_namespace_packages, setup
 
 version = (
-    (Path(__file__).parent / "flake8_datetime_utcnow" / "__version__.py")
+    (Path(__file__).parent / "src" / "flake8_datetime_utcnow" / "__version__.py")
     .read_text()
     .split("=")[1]
     .strip()[1:-1]
@@ -17,11 +17,12 @@ setup(
     author="Daniele Esposti",
     author_email="daniele.esposti@gmail.com",
     url="https://github.com/expobrain/flake8-datetime-utcnow-plugin",
-    packages=["flake8_datetime_utcnow"],
+    packages=find_namespace_packages(where="src"),
+    package_dir={"": "src"},
     install_requires=["flake8>=3.0.0"],
     entry_points={
         "flake8.extension": [
-            "U1 = flake8_datetime_utcnow:DatetimeUtcnowPlugin",
+            "U1 = flake8_datetime_utcnow:DatetimeUtcnowLinter",
         ],
     },
     classifiers=[
