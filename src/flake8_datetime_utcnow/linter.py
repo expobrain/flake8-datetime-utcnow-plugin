@@ -17,7 +17,7 @@ class DatetimeUtcnowLinter:
     def error(
         cls, lineno: int, offset: int, code: str, message: str
     ) -> Tuple[int, int, str, Type[DatetimeUtcnowLinter]]:
-        return (1, 10, f"{code} {message}", cls)
+        return (lineno, offset, f"{code} {message}", cls)
 
     def run(self):
         visitor = UtcnowVisitor()
