@@ -1,3 +1,4 @@
+from typing import List, Tuple
 import ast
 
 import pytest
@@ -6,19 +7,26 @@ from flake8_datetime_utcnow.linter import DatetimeUtcnowLinter
 
 
 @pytest.mark.parametrize(
-    "code",
+    "code, expected",
     [
-        "now = datetime.utcnow()",
-        "datetime.utcnow()",
-        "datetime.datetime.utcnow()",
+        ["datetime.utcnow()", [DatetimeUtcnowLinter.error(1, 1, "U100", "Avoid using utcnow()")]],
+        [
+            "now = datetime.utcnow()",
+            [DatetimeUtcnowLinter.error(1, 7, "U100", "Avoid using utcnow()")],
+        ],
+        [
+            "datetime.datetime.utcnow()",
+            [DatetimeUtcnowLinter.error(1, 9, "U100", "Avoid using utcnow()")],
+        ],
     ],
 )
-def test_linter_positive(code: str):
+def test_linter_positive(code: str, expected: List[Tuple]):
     tree = ast.parse(code)
     checker = DatetimeUtcnowLinter(tree)
 
-    for lineno, col_offset, msg, instance in checker.run():
-        assert msg.startswith("U100 Avoid using utcnow()")
+    actual = list(checker.run())
+
+    assert actual == expected
 
 
 @pytest.mark.parametrize("code", ["random_symbol.utcnow()"])
