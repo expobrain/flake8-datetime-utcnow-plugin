@@ -6,7 +6,7 @@ Plugin for `flake8` to warn the developer of the usage of [datetime.utcnow()](ht
 
 The problem with `datetme.utcnow()` is that indeed returns the current timestamp in the UTC timzone but the object is a naive `datetime`, that is doesn't have the `tzinfo` argument set.
 
-Instead [datetime.now()](https://docs.python.org/3/library/datetime.html#datetime.datetime.utcnow] shoukd be used passing the UTC timezone:
+Instead [datetime.now()](https://docs.python.org/3/library/datetime.html#datetime.datetime.utcnow] should be used passing the UTC timezone:
 
 ```python
 from datetime import datetime, timezone
