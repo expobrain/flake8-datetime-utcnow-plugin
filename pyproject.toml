@@ -3,9 +3,47 @@ line-length = 99
 target-version = ["py36", "py37", "py38"]
 exclude = '''
 /(
-    \.git|venv
+    \.git|venv|.venv
 )/
 '''
 
 [tool.isort]
 from_first = true
+
+[tool.poetry]
+name = "flake8-datetime-utcnow-plugin"
+version = "0.1.2"
+description = "Plugin to check that utcnow() is not used in favour of now(UTC)"
+repository = "https://github.com/expobrain/flake8-datetime-utcnow-plugin"
+authors = ["Daniele Esposti <daniele.esposti@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Framework :: Flake8",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[tool.poetry.plugins."flake8.extension"]
+U1 = "flake8_datetime_utcnow:DatetimeUtcnowLinter"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+flake8 = ">=3.0.0"
+
+[tool.poetry.dev-dependencies]
+autoflake = "^1.4"
+black = "^20.8b1"
+isort = "^5"
+mypy = "^0.782"
+pdbpp = "^0.10.2"
+pytest = "^6.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
