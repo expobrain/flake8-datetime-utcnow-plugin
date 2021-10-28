@@ -1,5 +1,5 @@
-from typing import List
 import ast
+from typing import List
 
 
 class UtcnowVisitor(ast.NodeVisitor):
