@@ -31,12 +31,13 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: Quality Assurance",
 ]
+packages = [{ include = "flake8_datetime_utcnow" }]
 
 [tool.poetry.plugins."flake8.extension"]
 U1 = "flake8_datetime_utcnow:DatetimeUtcnowLinter"
 
 [tool.poetry.dependencies]
-python = ">=3.6.2,<4"
+python = ">=3.7,<4"
 flake8 = ">=3.0.0"
 
 [tool.poetry.dev-dependencies]
