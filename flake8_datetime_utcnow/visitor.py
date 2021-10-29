@@ -1,4 +1,5 @@
 import ast
+from typing import List
 
 
 class UtcnowVisitor(ast.NodeVisitor):
@@ -20,6 +21,6 @@ class UtcnowVisitor(ast.NodeVisitor):
             and node.attr == "utcnow"
         )
 
-    def visit_Attribute(self, node: ast.Attribute):
+    def visit_Attribute(self, node: ast.Attribute) -> None:
         if self._is_datetime_datetime_utcnow(node) or self._is_datetime_utcnow(node):
             self.utcnows.append(node)
