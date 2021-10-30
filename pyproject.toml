@@ -15,7 +15,7 @@ skip_glob = ".venv,venv"
 
 [tool.poetry]
 name = "flake8-datetime-utcnow-plugin"
-version = "0.1.2dev0"
+version = "0.1.2dev1"
 description = "Plugin to check that utcnow() is not used in favour of now(UTC)"
 repository = "https://github.com/expobrain/flake8-datetime-utcnow-plugin"
 authors = ["Daniele Esposti <daniele.esposti@gmail.com>"]
