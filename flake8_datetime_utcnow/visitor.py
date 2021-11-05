@@ -3,7 +3,7 @@ from typing import List
 
 
 class UtcnowVisitor(ast.NodeVisitor):
-    def __init__(self):
+    def __init__(self) -> None:
         self.utcnows: List[ast.Attribute] = []
 
     def _is_datetime_utcnow(self, node: ast.Attribute) -> bool:
