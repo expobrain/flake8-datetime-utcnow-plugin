@@ -15,6 +15,12 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Cache multiple paths
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/pip
+          key: ${{ runner.os }}-{{ matrix.python-version }}-poetry-${{ hashFiles('**/poetry.lock') }}
       - run: pip install poetry
       - run: poetry install
       - run: poetry run make test
