@@ -42,7 +42,7 @@ flake8 = ">=3.0.0"
 
 [tool.poetry.dev-dependencies]
 autoflake = "^1.5"
-black = "^22.6"
+black = "^22.8"
 isort = "^5.10.1"
 mypy = "^0.971"
 pdbpp = "^0.10.2"
