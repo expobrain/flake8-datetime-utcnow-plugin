@@ -46,7 +46,7 @@ black = "^23.3"
 isort = "^5.11.5"
 mypy = "^1.2"
 pdbpp = "^0.10.2"
-pytest = "^7.3.0"
+pytest = "^7.3.1"
 pytest-cov = "^4.0.0"
 
 [build-system]
